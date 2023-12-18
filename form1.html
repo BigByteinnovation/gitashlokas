@@ -32,10 +32,10 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6 ">
-        <form class="bg-white shadow p-4 rounded " method="POST" action="upload.php">
+        <form class="bg-white shadow p-4 rounded " method="POST" action="upload.php" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Or Organisation Name</label>
-            <input type="text" class="form-control" name="name" id="exampleInputEmail1" >
+            <input type="text" class="form-control" name="name" id="exampleInputEmail1">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Country</label>
@@ -50,11 +50,11 @@
             <input type="text" class="form-control" name="city" id="exampleInputPassword1">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">No. of Person       Chanting Shlokas</label>
+            <label for="exampleInputPassword1" class="form-label">No. of Person Chanting Shlokas</label>
             <input type="text" class="form-control" name="numbers" id="exampleInputPassword1">
           </div>
           <label for="images">Choose images:</label>
-          <input class="form-control" type="file" name="images[]" id="images" accept="image/*" multiple>
+          <input class="form-control" type="file" name="uploadimg" id="images" accept="image/*" multiple>
 
           <button type="submit" class="btn btn-danger m-5">Submit</button>
         </form>
@@ -142,6 +142,7 @@
       });
     });
   </script>
+  
 
   </div>
 
