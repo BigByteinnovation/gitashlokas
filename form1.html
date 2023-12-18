@@ -158,6 +158,11 @@
             // console.log("we started sending data");
           },
           success: function (response) {
+            let p = document.createElement(span);
+            p.addclassList = "msgani";
+            p.innerHTML = response;
+            
+
             // console.log(response);
             $('#statusMsg').html(response);
             // if (response.status == 1) {
