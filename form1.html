@@ -32,7 +32,7 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6 ">
-        <form class="bg-white shadow p-4 rounded " method="POST" action="upload.php" enctype="multipart/form-data">
+        <form id="chantForm" class="bg-white shadow p-4 rounded " method="POST" action="upload.php" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Or Organisation Name</label>
             <input type="text" class="form-control" name="name" id="exampleInputEmail1">
@@ -56,7 +56,8 @@
           <label for="images">Choose images:</label>
           <input class="form-control" type="file" name="uploadimg" id="images" accept="image/*" multiple>
 
-          <button type="submit" class="btn btn-danger m-5">Submit</button>
+          <button type="submit" class=" submitBtn btn btn-danger m-5">Submit</button>
+          <spam class="statusMsg text-danger"></spam>
         </form>
       </div>
       <div class="col-md-6 d-flex flex-column bg-white rounded shadow p-0 overflow-hidden ">
@@ -142,7 +143,43 @@
       });
     });
   </script>
-  
+
+
+<!-- form submission -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function (e) {
+      // Submit form data via Ajax
+      $("#chantForm").on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+          type: 'POST',
+          url: 'upload.php',
+          data: new FormData(this),
+          dataType: 'json',
+          contentType: false,
+          cache: false,
+          processData: false,
+          beforeSend: function () {
+            $('.submitBtn').attr("disabled", "disabled");
+            $('#chantForm').css("opacity", ".5");
+          },
+          success: function (response) {
+            $('.statusMsg').html('');
+            if (response.status == 1) {
+              $('#fupForm')[0].reset();
+              $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
+            } else {
+              $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
+            }
+            $('#fchantForm').css("opacity", "");
+            $(".submitBtn").removeAttr("disabled");
+          }
+        });
+      });
+    });
+  </script>
 
   </div>
 
