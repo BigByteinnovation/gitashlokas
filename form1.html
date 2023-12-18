@@ -15,6 +15,13 @@
     body {
       background: #f7e092;
     }
+    #totalChants{
+      height: 120px;
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 
@@ -50,19 +57,20 @@
           <button type="submit" class="btn btn-danger m-5">Submit</button>
         </form>
       </div>
-      <div class="col-6"> 
-        <img  src="assets/guru.jpg" width="100%"></div>
-
+      <div class="col-md-6 d-flex flex-column bg-white rounded shadow p-0 overflow-hidden"> 
+        <img class="rounded" src="assets/guru.jpg" width="100%">
+        <div  class="m-2 d-flex flex-column justify-content-center align-items-center  h-100" >
+          <h3>TOTAL NO. OF SHLOKAS CHANT</h3>
+          <h1 id="totalChants" class="bg-danger text-white rounded-circle fw-bolder" >500+</h1>
+        </div>
+      </div>
     </div>
   </div>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4  offset-4 border border-danger">TOTAL NO. OF SHLOKAS
-        <div>
-          LOGIC WILL APPLY TO ADD SHLOKAS
-        </div>
+      <div class="col-md-4 offset-4 border border-danger">TOTAL NO. OF SHLOKAS 
       </div>
 
     </div>
