@@ -29,11 +29,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+
     }
 
     .carousel-item {
       transition: transform 2s ease-in-out;
       /* Default transition properties */
+    }
+
+    #msgspan {
+      opacity: 0;
+      animation: op 5s ease-in;
+    }
+
+    @keyframes op {
+      0% {
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -43,7 +64,7 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6 ">
-        <form id="chantForm" class="bg-white shadow p-4 rounded " method="POST" action="upload.php"
+        <form id="chantForm" class="bg-white shadow p-4 rounded " method="POST" action="partials/upload.php"
           enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Or Organisation Name</label>
@@ -146,7 +167,7 @@
         e.preventDefault();
         $.ajax({
           type: 'POST',
-          url: 'upload.php',
+          url: 'partials/upload.php',
           data: new FormData(this),
           // dataType: 'json',
           contentType: false,
@@ -158,36 +179,55 @@
             // console.log("we started sending data");
           },
           success: function (response) {
-            let p = document.createElement(span);
+            let p = document.createElement("span");
             p.addclassList = "msgani";
             p.innerHTML = response;
-            
+            p.id = "msgspan";
 
-            // console.log(response);
-            $('#statusMsg').html(response);
+            console.log(p);
+            $('#statusMsg').html(p);
             // if (response.status == 1) {
-            //   $('#chantForm')[0].reset();
+              $('#chantForm')[0].reset();
             //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
             // } else {
             //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
             // }
             $('#chantForm').css("opacity", "");
             $(".submitBtn").removeAttr("disabled");
+            $.ajax({
+              type: 'POST',
+              url: 'partials/chant.php',
+              success: function (response) {
+                $('#totalChants').html(response)
+              }
+            })
           }
         });
       });
+      $.ajax({
+        type: 'POST',
+        url: 'partials/chant.php',
+        success: function (response) {
+          $('#totalChants').html(response)
+        }
+      })
+      setInterval(() => {
+        $.ajax({
+          type: 'POST',
+          url: 'partials/chant.php',
+          success: function (response) {
+            $('#totalChants').html(response)
+          }
+        })
+      }, 3000);
     });
+
 
   </script>
 
   <!-- Custom Script for Auto Sliding -->
   <script>
-    // $(document).ready(function () {
-    //      // Set the interval for auto-sliding (3 seconds in this example)
-    //      $('#slider1, #slider2, #slider3').carousel({
-    //          interval: 1000
-    //      });
-    //  });
+
   </script>
 
 

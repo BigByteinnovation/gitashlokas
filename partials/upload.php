@@ -1,7 +1,7 @@
 <?php
 
 $status = null;
-require_once('partials\db.php');
+require_once('db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $city = $_POST['city'];
     $numbers = $_POST['numbers'];
 
-    $target_dir = "assets/uploads/";
+    $target_dir = "../assets/uploads/";
     $target_file = $target_dir . basename($_FILES["uploadimg"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
