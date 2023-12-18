@@ -1,6 +1,7 @@
 <?php
 
-$status = null;
+try {
+    $status = null;
 require_once('db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,5 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 }
 echo $status;
+} catch (\Throwable $th) {
+    echo "some error occured";
+}
 
 ?>
