@@ -30,26 +30,26 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6 ">
-        <form class="bg-white shadow p-3 rounded ">
+        <form class="bg-white shadow p-4 rounded " method="POST" action="upload.php">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Or Organisation Name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="name" id="exampleInputEmail1" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Country</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="text" class="form-control" name="country" id="exampleInputPassword1">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">State</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <input type="text" class="form-control" name="state" id="exampleInputPassword1">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">City</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <input type="text" class="form-control" name="city" id="exampleInputPassword1">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">No. of Person Chanting Shlokas</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">No. of Person       Chanting Shlokas</label>
+            <input type="text" class="form-control" name="numbers" id="exampleInputPassword1">
           </div>
           <label for="images">Choose images:</label>
           <input class="form-control" type="file" name="images[]" id="images" accept="image/*" multiple>
