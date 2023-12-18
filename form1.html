@@ -8,11 +8,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
-    body{
-      font-family:sans-serif;
-      font-size:larger;
+    body {
+      font-family: sans-serif;
+      font-size: larger;
       font-weight: 500;
     }
+
     form {
       display: flex;
       flex-direction: column;
@@ -29,10 +30,11 @@
       align-items: center;
       justify-content: center;
     }
-    .carousel-item {
-            transition: transform 2s ease-in-out; /* Default transition properties */
-        }
 
+    .carousel-item {
+      transition: transform 2s ease-in-out;
+      /* Default transition properties */
+    }
   </style>
 </head>
 
@@ -41,14 +43,15 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6 ">
-        <form id="chantForm" class="bg-white shadow p-4 rounded " method="POST" action="upload.php" enctype="multipart/form-data">
+        <form id="chantForm" class="bg-white shadow p-4 rounded " method="POST" action="upload.php"
+          enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Or Organisation Name</label>
             <input type="text" class="form-control" name="name" id="exampleInputEmail1">
           </div>
           <div class="mb-3">
             <label for="country" class="form-label">Country</label>
-            <input type="text" class="form-control" name="Country" id="country">
+            <input type="text" class="form-control" name="country" id="country">
           </div>
           <div class="mb-3">
             <label for="state" class="form-label">State</label>
@@ -56,7 +59,7 @@
           </div>
           <div class="mb-3">
             <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city">
+            <input type="text" class="form-control" name="city" id="city">
           </div>
           <div class="mb-3">
             <label for="numbers" class="form-label">No. of Person Chanting Shlokas</label>
@@ -66,7 +69,7 @@
           <input class="form-control" type="file" name="uploadimg" id="images" accept="image/*" multiple>
 
           <button type="submit" class=" submitBtn btn btn-danger m-5">Submit</button>
-          <spam class="statusMsg text-danger"></spam>
+          <spam id="statusMsg" class="statusMsg text-center text-danger"></spam>
         </form>
       </div>
       <div class="col-md-6 d-flex flex-column bg-white rounded shadow p-0 overflow-hidden ">
@@ -123,21 +126,21 @@
 
     </div>
   </div>
-</div>
+  </div>
   <!-- Bootstrap JS and Popper.js CDN -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
 
 
-<!-- form submission -->
+
+  <!-- form submission -->
 
   <script>
     $(document).ready(function (e) {
-      console.log("hi")
+      console.log("hi");
       // Submit form data via Ajax
       $("#chantForm").on('submit', function (e) {
         e.preventDefault();
@@ -145,29 +148,31 @@
           type: 'POST',
           url: 'upload.php',
           data: new FormData(this),
-          dataType: 'json',
+          // dataType: 'json',
           contentType: false,
           cache: false,
           processData: false,
           beforeSend: function () {
             $('.submitBtn').attr("disabled", "disabled");
-            $('#chantForm').css("opacity", ".5");
+            $('#chantForm').css("opacity", "0.5");
+            // console.log("we started sending data");
           },
           success: function (response) {
-            console.log(response)
-            $('.statusMsg').html(response);
-            if (response.status == 1) {
-              $('#fupForm')[0].reset();
-              $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
-            } else {
-              $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
-            }
-            $('#fchantForm').css("opacity", "");
+            // console.log(response);
+            $('#statusMsg').html(response);
+            // if (response.status == 1) {
+            //   $('#chantForm')[0].reset();
+            //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
+            // } else {
+            //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
+            // }
+            $('#chantForm').css("opacity", "");
             $(".submitBtn").removeAttr("disabled");
           }
         });
       });
     });
+
   </script>
 
   <!-- Custom Script for Auto Sliding -->
@@ -178,7 +183,7 @@
     //          interval: 1000
     //      });
     //  });
-   </script>
+  </script>
 
 
 
