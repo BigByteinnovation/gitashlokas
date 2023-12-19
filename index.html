@@ -6,120 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Document</title>
-  <link rel="stylesheet" href="assets/css/header.css">
-
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-  <style>
-    body {
-      font-family: sans-serif;
-      font-size: larger;
-      font-weight: 500;
-    }
-
-
-    body {
-      background: #f7e092 !important;
-    }
-
-    #totalChants {
-      height: 120px !important;
-      width: 40% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-
-    }
-
-    .carousel-item {
-      transition: transform 2s ease-in-out;
-      /* Default transition properties */
-    }
-
-    #msgspan {
-      opacity: 0;
-      animation: op 5s ease-in;
-    }
-
-    @keyframes op {
-      0% {
-        opacity: 1;
-      }
-
-      70% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .a-navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .a-navbar ul {
-      list-style: none;
-    }
-
-    .a-navbar ul a {
-      text-decoration: none;
-      color: rgb(78, 78, 78);
-      position: relative;
-    }
-
-    .a-navbar ul li {
-      transition: all 5s;
-      position: relative;
-
-    }
-
-    .a-navbar ul li:hover ::after {
-      position: absolute;
-      background-color: #fd5a5a;
-      width: 100%;
-      height: 5px;
-
-    }
-
-    .a-navbar ul li:hover a {
-      color: #fd5a5a;
-    }
-
-    .mybtn {
-      height: 100%;
-      background-color: #fd5a5a;
-      border: none;
-      border-radius: 0;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    #header,
-    .a-head {
-      background-color: #c16406;
-      color: white;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .a-head .email-content a{
-      background-color: #c16406;
-      color: white;
-      text-decoration: none;
-    }
-    .a-head .email-content a:hover{
-      
-      color: yellow;
-      
-    }
-    
-  </style>
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ 
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body class="">
@@ -143,9 +35,27 @@
   </div>
   <div class="container-fluid bg-white p-3">
     <div class="container ">
-      <div class="a-navbar">
+      <div id="mynav" class="a-navbar">
         <div class="logo"><img width="70px" src="assets\Logo.png" alt=""></div>
-        <ul class="d-flex gap-3 align-items-center m-0">
+        <ul  class=" d-flex gap-3 align-items-center m-0">
+          <li><a href="https://gieogita.org/" aria-current="page"><span>GIEO GITA</span></a></li>
+          <li><a href="https://parivaar.gieogita.org/"><span>Join GIEO Gita</span></a></li>
+          <li><a href="#"><span>About Us</span></a></li>
+          <li><a href="#"><span>Services</span></a></li>
+          <li><a href="https://gieogita.org/education/"><span>Education</span></a></li>
+          <li><a href="https://gieogita.org/events/"><span>Events</span></a></li>
+          <li><a href="https://gieogita.org/our-gallery/"><span>Gallery</span></a></li>
+          <li><a href="#"><span>Download</span></a></li>
+          <li><a href="https://gieogita.org/contact/"><span>Contact</span></a></li>
+          <li><a href="https://www.gieogitaindia.in/join-gieo-gita"><span>Volunteer</span></a></li>
+        </ul>
+      </div>
+      <div id="mobilenav" class="a-navbar">
+        <input id="menutoggle" type="checkbox" hidden>
+        <div class="logo-m py-2"><img class="" width="70px" src="assets\Logo.png" alt=""> 
+          <label for="menutoggle" style=" position: absolute; right: 4%; "><img width="50px" src="assets\hamburger-menu.svg" alt=""></label>
+        </div>
+        <ul id="mobilemenu"  class=" d-flex flex-column gap-3  justify-content-start p-3 mt-3 text-white">
           <li><a href="https://gieogita.org/" aria-current="page"><span>GIEO GITA</span></a></li>
           <li><a href="https://parivaar.gieogita.org/"><span>Join GIEO Gita</span></a></li>
           <li><a href="#"><span>About Us</span></a></li>

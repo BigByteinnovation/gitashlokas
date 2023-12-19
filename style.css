@@ -2,6 +2,7 @@ body {
     font-family: sans-serif;
     font-size: larger;
     font-weight: 500;
+    overflow-x: hidden;
   }
 
 
@@ -102,5 +103,49 @@ body {
   .a-head .email-content a:hover{
     
     color: yellow;
+    
+  }
+  #mobilenav{
+    display: none;
+    flex-direction: column;
+
+}
+
+
+  /* ====================   responsive css  ================== */
+  @media screen and (max-width: 700px) {
+    .a-head, #mynav{
+        display: none;
+    }
+    #mobilenav {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #mobilemenu{
+        position: absolute;
+        background-color: black;
+        width: 50%;
+        left: 0;
+        top: 13%;
+        padding: 10px;
+        transform: translatex(-101%);
+        transition: all 0.5s;
+    }
+    #mobilemenu li a{
+        color: white;
+    }
+   
+    
+  }
+  #menutoggle:checked ~ #mobilemenu{
+    transform: translatex(1%);
+  }
+  #menutoggle label{
+    
+        display: inline-block;
+        right: 2%;
+        position: absolute;
     
   }
