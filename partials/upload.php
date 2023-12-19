@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
             // $sql = "INSERT INTO `blogs`( `title`, `category`, `description`, `featured_img`) VALUES ('$title','$category','$desc','$fimgname')";
-            $newName = date("Ymds") . $_FILES["uploadimg"]["name"];
+            $newName = date("Ymds") . $name."." .$imageFileType;
             // echo $newName;
             $fimgname = $target_dir . $newName;
             if (move_uploaded_file($_FILES["uploadimg"]["tmp_name"], $fimgname)) {

@@ -2,7 +2,7 @@
 $LatestPics = array();
 require_once('db.php');
 
-$sql = "SELECT `img` FROM chant_data LIMIT 10";
+$sql = "SELECT `img` FROM chant_data ORDER BY `id` DESC LIMIT 10";
 $result = $conn->query($sql);
 
 // Fetch result

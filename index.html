@@ -174,13 +174,16 @@
         url: 'partials/pictures.php',
         success: function (response) {
           var pics = jQuery.parseJSON(response)
-          console.log(pics[1])
-          $('.slide-img').each(function(){
-            console.log("hii slide")
+          $('.slide-img').each(function(e,q){
+            if(pics[e]){
+              q.src ="assets/uploads/"+pics[e]
+            }
+            // console.log(e,q.src)
           })
+          // console.log(pics)
         }
       })
-      console.log("hi");
+      
       // Submit form data via Ajax
       $("#chantForm").on('submit', function (e) {
         e.preventDefault();
