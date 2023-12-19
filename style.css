@@ -113,7 +113,7 @@ body {
 
 
   /* ====================   responsive css  ================== */
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 767px) {
     .a-head, #mynav{
         display: none;
     }
