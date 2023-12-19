@@ -13,14 +13,15 @@ try {
 // echo var_dump($totalCount);
     $sql = "SELECT SUM(numbers) AS total FROM chant_data";
     $result = $conn->query($sql);
+    
 
     // Fetch result
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        // echo var_dump($row);
         $sum = $row['total'];
         echo $sum;
         if($sum == null){
-
             echo 0;
         }
     }else {
@@ -28,7 +29,7 @@ try {
     }
 } catch (\Throwable $th) {
     //throw $th;
-    echo 0;
+    echo "some error found";
 }
 
 // Close connection
