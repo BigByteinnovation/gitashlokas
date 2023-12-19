@@ -7,10 +7,10 @@
 
   <title>Document</title>
   <link rel="stylesheet" href="assets/css/header.css">
-  <link id="headercss" rel="stylesheet" href="style.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
+
   <style>
     body {
       font-family: sans-serif;
@@ -18,7 +18,7 @@
       font-weight: 500;
     }
 
-    
+
     body {
       background: #f7e092 !important;
     }
@@ -56,11 +56,56 @@
         opacity: 0;
       }
     }
+    .a-navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .a-navbar ul{
+      list-style: none;
+    }
+    .a-navbar ul a{
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body class="">
   <div class="m-0 p-0 bg-white" id="header"></div>
+  <div class="container">
+    <div class="head-bar d-flex d-flex justify-content-around my-2">
+      <div class="d-flex justify-content-center gap-3">
+        <span>93546-26999</span>
+        <span class="email content">
+          <a href="mailto:gieogita@gmail.com">gieogita@gmail.com</a>
+        </span>
+        <span class="d-flex justify-content-center">Gita Gyan Sansthanam, KDB Road, Kurukshetra</span>
+      </div>
+      <div class="d-flex justify-content-center gap-3">
+        <a class="btn btn-danger" href="https://gieogita.org/virtual-tour">Virtual Tour</a>
+        <a class="btn btn-danger" href="https://gieogita.org/donation/">Donate Now </a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="a-navbar">
+        <div class="logo"><img width="100px" src="assets\Logo.png" alt=""></div>
+        <ul class="d-flex gap-3">
+            <li><a href="https://gieogita.org/" aria-current="page"><span>GIEO GITA</span></a></li>
+            <li><a href="https://parivaar.gieogita.org/"><span>Join GIEO Gita</span></a></li>
+            <li><a href="#"><span>About Us</span></a></li>
+            <li><a href="#"><span>Services</span></a></li>
+            <li><a href="https://gieogita.org/education/"><span>Education</span></a></li>
+            <li><a href="https://gieogita.org/events/"><span>Events</span></a></li>
+            <li><a href="https://gieogita.org/our-gallery/"><span>Gallery</span></a></li>
+            <li><a href="#"><span>Download</span></a></li>
+            <li><a href="https://gieogita.org/contact/"><span>Contact</span></a></li>
+            <li><a href="https://www.gieogitaindia.in/join-gieo-gita"><span>Volunteer</span></a></li>
+          </ul>
+    </div>
+</div>
+
+  </div>
   <!-- /* ========================================FORM START================================== */ -->
   <div class="container mt-4">
     <div class="row">
@@ -162,10 +207,10 @@
 
   <script>
     $(document).ready(function (e) {
-      
+
       $.ajax({
         type: 'POST',
-        url: 'partials/header.html',
+        url: 'partials/head.html',
         success: function (response) {
           $('#header').html(response)
         }
@@ -196,7 +241,7 @@
             console.log(p);
             $('#statusMsg').html(p);
             // if (response.status == 1) {
-              $('#chantForm')[0].reset();
+            $('#chantForm')[0].reset();
             //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
             // } else {
             //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
