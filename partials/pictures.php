@@ -2,14 +2,15 @@
 $LatestPics = array();
 require_once('db.php');
 
-$sql = "SELECT `img` FROM chant_data ORDER BY `id` DESC LIMIT 10";
+$sql = "SELECT * FROM `chant_data` ORDER BY `id` DESC LIMIT 10";
 $result = $conn->query($sql);
-
+// echo var_dump($result);
 // Fetch result
-if($result->num_rows > 0) {
+if($result->num_rows < 0) {
     $row = $result->fetch_assoc();
     while($row = $result->fetch_assoc()){
-    // echo var_dump($row);
+        echo $row['img'];
+    echo var_dump($row);
         array_push($LatestPics,$row['img']);
     }
 }
