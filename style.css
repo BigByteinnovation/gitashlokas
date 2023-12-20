@@ -171,6 +171,54 @@ body {
   margin: 0;
  
 }
+
+.pic {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 19/9;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.pic:hover {
+  transform: scale(1.08);
+}
+
+#viewPic {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  backdrop-filter: blur(2px);
+  transition: all 0.5s;
+  transform-origin: center;
+  overflow: hidden;
+  border-radius: 50%;
+  scale: 0;
+  z-index: 100;
+}
+
+#activeImg {
+  width: 90vw;
+  height: auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+  color: white;
+  background-color: white;
+  border-radius: 50%;
+}
+#countbox{
+  display: none;
+}
+
 /* ====================   responsive css  ================== */
 @media screen and (max-width: 767px) {
 
@@ -188,20 +236,23 @@ body {
 
   #mobilemenu {
     position: absolute;
-    /* background-color: black; */
+    background-color: rgba(0, 0, 0, 0.85);
     width: 250px;
     left: 0;
-    top: 20%;
+    top: 15%;
     padding: 10px;
     transform: translatex(-101%);
     transition: all 0.5s;
+    border-radius: 0 10px 10px 0;
+    z-index: 200;
   }
 
   #mobilemenu li a {
     color: white;
   }
+
   #countdown {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     bottom: 1%;
     left: 1%;
@@ -209,9 +260,11 @@ body {
     font-weight: 800;
     color: rgb(7, 247, 11);
     gap: 2px;
-    background-color: purple;
-    
-  }
+    background-color: rgb(73, 0, 73);
+    width: 100%;
+    height: 90px;
+}
+
   .countdown-item {
     /* background-color: rgba(255, 255, 255, 0.815); */
     display: flex;
@@ -223,10 +276,15 @@ body {
     border-radius: 10px;
     font-size: 1rem;
   }
-  .countdown-label{
+
+  .countdown-label {
     font-weight: 400;
     font-size: small;
   }
-
+  #countbox{
+    display: block;
+    position: relative;
+    height: 100px;
+  }
 
 }
