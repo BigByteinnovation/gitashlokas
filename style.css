@@ -169,3 +169,9 @@ body {
         position: absolute;
     
   }
+  #countdown{
+    position: absolute;
+    display: flex;
+    bottom: 2%;
+    left: 2%;
+  }

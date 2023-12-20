@@ -91,7 +91,6 @@ $result = $conn->query($sql);
         $(document).ready(function(e) {
             viewPic = document.getElementById('viewPic')
             activeImg = document.getElementById('activeImg')
-
             $('.pic').each(function(e, q) {
                 $(q).click(() => {
                     activeImg.src = q.src
