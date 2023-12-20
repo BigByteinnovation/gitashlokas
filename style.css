@@ -1,24 +1,25 @@
 body {
-    font-family: sans-serif;
-    font-size: larger;
-    font-weight: 500;
-    overflow-x: hidden;
-  }
+  font-family: sans-serif;
+  font-size: larger;
+  font-weight: 500;
+  overflow-x: hidden;
+}
 
 
-  body {
-    background: #f7e092 !important;
-  }
+body {
+  background: #f7e092 !important;
+}
 
-  #totalChants {
-    height: 120px !important;
-    width: 40% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+#totalChants {
+  height: 120px !important;
+  width: 40% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
 
-  }
+}
+
 /* ====================================count Down ========================= */
 #countdown {
   font-size: 24px;
@@ -41,151 +42,188 @@ body {
 /* =========================================countdown ENds==================================== */
 
 .carousel-item {
-    transition: transform 2s ease-in-out;
-    /* Default transition properties */
+  transition: transform 2s ease-in-out;
+  /* Default transition properties */
+}
+
+/*#msgspan {*/
+/*  opacity: 0;*/
+/*  animation: op 5s ease-in;*/
+/*}*/
+
+@keyframes opw {
+  0% {
+    opacity: 1;
   }
 
-  /*#msgspan {*/
-  /*  opacity: 0;*/
-  /*  animation: op 5s ease-in;*/
-  /*}*/
-
-  @keyframes opw {
-    0% {
-      opacity: 1;
-    }
-
-    70% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-    }
+  70% {
+    opacity: 1;
   }
 
-  .a-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  100% {
+    opacity: 0;
   }
+}
 
-  .a-navbar ul {
-    list-style: none;
-  }
+.a-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .a-navbar ul a {
-    text-decoration: none;
-    color: rgb(78, 78, 78);
-    position: relative;
-  }
+.a-navbar ul {
+  list-style: none;
+}
 
-  .a-navbar ul li {
-    transition: all 5s;
-    position: relative;
+.a-navbar ul a {
+  text-decoration: none;
+  color: rgb(78, 78, 78);
+  position: relative;
+}
 
-  }
+.a-navbar ul li {
+  transition: all 5s;
+  position: relative;
 
-  .a-navbar ul li:hover ::after {
-    position: absolute;
-    background-color: #fd5a5a;
-    width: 100%;
-    height: 5px;
+}
 
-  }
+.a-navbar ul li:hover ::after {
+  position: absolute;
+  background-color: #fd5a5a;
+  width: 100%;
+  height: 5px;
 
-  .a-navbar ul li:hover a {
-    color: #fd5a5a;
-  }
+}
 
-  .mybtn {
-    height: 100%;
-    background-color: #fd5a5a;
-    border: none;
-    border-radius: 0;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
+.a-navbar ul li:hover a {
+  color: #fd5a5a;
+}
 
-  #header,
-  .a-head {
-    background-color: #c16406;
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .a-head .email-content a{
-    background-color: #c16406;
-    color: white;
-    text-decoration: none;
-  }
-  .a-head .email-content a:hover{
-    
-    color: yellow;
-    
-  }
-  #mobilenav{
-    display: none;
-    flex-direction: column;
+.mybtn {
+  height: 100%;
+  background-color: #fd5a5a;
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#header,
+.a-head {
+  background-color: #c16406;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.a-head .email-content a {
+  background-color: #c16406;
+  color: white;
+  text-decoration: none;
+}
+
+.a-head .email-content a:hover {
+
+  color: yellow;
+
+}
+
+#mobilenav {
+  display: none;
+  flex-direction: column;
 
 }
 
 
-  /* ====================   responsive css  ================== */
-  @media screen and (max-width: 767px) {
-    .a-head, #mynav{
-        display: none;
-    }
-    #mobilenav {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    #mobilemenu{
-        position: absolute;
-        background-color: black;
-        width: 250px;
-        left: 0;
-        top: 20%;
-        padding: 10px;
-        transform: translatex(-101%);
-        transition: all 0.5s;
-    }
-    #mobilemenu li a{
-        color: white;
-    }
-   
-    
+
+#menutoggle:checked~#mobilemenu {
+  transform: translatex(1%);
+}
+
+#menutoggle label {
+
+  display: inline-block;
+  right: 2%;
+  position: absolute;
+
+}
+
+#countdown {
+  position: absolute;
+  display: flex;
+  bottom: 1%;
+  left: 1%;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: green;
+  gap: 5px;
+}
+
+.countdown-item {
+  background-color: rgba(255, 255, 255, 0.815);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 10px;
+}
+/* ====================   responsive css  ================== */
+@media screen and (max-width: 767px) {
+
+  .a-head,
+  #mynav {
+    display: none;
   }
-  #menutoggle:checked ~ #mobilemenu{
-    transform: translatex(1%);
+
+  #mobilenav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  #menutoggle label{
-    
-        display: inline-block;
-        right: 2%;
-        position: absolute;
-    
+
+  #mobilemenu {
+    position: absolute;
+    background-color: black;
+    width: 250px;
+    left: 0;
+    top: 20%;
+    padding: 10px;
+    transform: translatex(-101%);
+    transition: all 0.5s;
   }
-  #countdown{
+
+  #mobilemenu li a {
+    color: white;
+  }
+  #countdown {
     position: absolute;
     display: flex;
     bottom: 1%;
     left: 1%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: green;
-    gap: 5px;
+    gap: 2px;
   }
-  .countdown-item{
+  .countdown-item {
     background-color: rgba(255, 255, 255, 0.815);
     display: flex;
-    padding: 10px;
+    padding: 3px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0;
     border-radius: 10px;
+    font-size: 1rem;
   }
+  .countdown-label{
+    font-weight: 400;
+    font-size: small;
+  }
+
+
+}
