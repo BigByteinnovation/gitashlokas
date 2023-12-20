@@ -25,7 +25,7 @@
               <path
                 d="M27.308,20.649l-2.2-2.2a3.521,3.521,0,0,0-4.938-.021,2.152,2.152,0,0,1-2.729.267A15.026,15.026,0,0,1,13.3,14.562a2.181,2.181,0,0,1,.284-2.739A3.521,3.521,0,0,0,13.553,6.9l-2.2-2.2a3.514,3.514,0,0,0-4.961,0l-.633.634c-3.3,3.3-3.053,10.238,3.813,17.1,4.14,4.141,8.307,5.875,11.686,5.875a7.5,7.5,0,0,0,5.418-2.061l.634-.634A3.513,3.513,0,0,0,27.308,20.649ZM25.894,24.2l-.634.634c-2.6,2.6-8.339,2.125-14.276-3.813S4.571,9.34,7.171,6.74L7.8,6.107a1.511,1.511,0,0,1,2.133,0l2.2,2.2a1.511,1.511,0,0,1,.021,2.11,4.181,4.181,0,0,0-.531,5.239,17.01,17.01,0,0,0,4.713,4.706,4.179,4.179,0,0,0,5.231-.517,1.512,1.512,0,0,1,2.118.013l2.2,2.2A1.51,1.51,0,0,1,25.894,24.2Z"
                 fill="white"></path>
-            </svg>93546-26999</span>
+            </svg> +91 93546-26999</span>
           <span class="email-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="email" width="22" height="22"
               style="font-weight: 800;">
@@ -131,6 +131,29 @@
         </form>
       </div>
       <div class="col-md-6 d-flex flex-column bg-white rounded shadow pt-2  mt-4 ">
+         <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-ms-10">
+              <div id="countdown" class="text-center">
+                <div class="row">
+                  <div class="col-ms-3">
+                    <div id="days" class="countdown-item"></div>
+                  </div>
+                  <div class="col-ms-3">
+                    <div id="hours" class="countdown-item"></div>
+                  </div>
+                  <div class="col-ms-3">
+                    <div id="minutes" class="countdown-item"></div>
+                  </div>
+                  <div class="col-ms-3">
+                    <div id="seconds" class="countdown-item"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+       
         <img class="rounded" src="assets/guru copy.jpg" width="100%">
         <div
           class="m-2 d-flex flex-column justify-content-center align-items-center border border-danger rounded h-100">
@@ -289,6 +312,33 @@
       //   event.preventDefault();
       // }
     }
+  </script>
+
+<script>
+  const targetDate = new Date('December 23, 2023 11:00:00').getTime();
+  const countdownInterval = setInterval(updateCountdown, 1000);
+
+  function updateCountdown() {
+    const currentDate = new Date().getTime();
+    const timeDifference = targetDate - currentDate;
+
+    if (timeDifference > 0) {
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerHTML = `<div>${days}</div><div class="countdown-label">Days</div>`;
+      document.getElementById('hours').innerHTML = `<div>${hours}</div><div class="countdown-label">Hours</div>`;
+      document.getElementById('minutes').innerHTML = `<div>${minutes}</div><div class="countdown-label">Minutes</div>`;
+      document.getElementById('seconds').innerHTML = `<div>${seconds}</div><div class="countdown-label">Seconds</div>`;
+    } else {
+      document.getElementById('countdown').innerHTML = 'Countdown expired!';
+      clearInterval(countdownInterval);
+    }
+  }
+</script>
+<script>
     function validateFile() {
       var fileInput = document.getElementById('uploadimg');
       var fileSize = fileInput.files[0].size; // in bytes
@@ -307,11 +357,6 @@
   <!-- Bootstrap JS and Popper.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-
-
 </body>
 
 </html>
