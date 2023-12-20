@@ -25,12 +25,12 @@ body {
     /* Default transition properties */
   }
 
-  #msgspan {
-    opacity: 0;
-    animation: op 5s ease-in;
-  }
+  /*#msgspan {*/
+  /*  opacity: 0;*/
+  /*  animation: op 5s ease-in;*/
+  /*}*/
 
-  @keyframes op {
+  @keyframes opw {
     0% {
       opacity: 1;
     }
