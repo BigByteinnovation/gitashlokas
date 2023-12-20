@@ -97,7 +97,7 @@ $result = $conn->query($sql);
         </div>
         <div class="d-flex justify-content-center gap-3">
           <a class="mybtn btn btn-danger p-3" href="https://gieogita.org/virtual-tour">Virtual Tour</a>
-          <a class="mybtn btn btn-danger p-3" href="https://gieogita.org/donation/">Donate Now </a>
+          <!-- <a class="mybtn btn btn-danger p-3" href="https://gieogita.org/donation/">Donate Now </a> -->
         </div>
       </div>
     </div>
