@@ -92,6 +92,7 @@
   </div>
 
   </div>
+  <div id="countbox" class="container"></div>
   <!-- /* ========================================FORM START================================== */ -->
   <div class="container ">
     <div class="row">
@@ -117,7 +118,8 @@
           </div>
           <div class="mb-1">
             <label for="mobile" class="form-label">Mobile<span class="text-danger">*</span></label>
-            <input type="text"  oninput="validateNumericInput(this)" pattern="[0-9]*" required class="form-control" name="mobile" id="mobile">
+            <input type="text" oninput="validateNumericInput(this)" pattern="[0-9]*" required class="form-control"
+              name="mobile" id="mobile">
           </div>
           <div class="mb-1">
             <label for="numbers" class="form-label">No. of Person Chanting Shlokas <span
@@ -135,7 +137,7 @@
           <p id="statusMsg" class="statusMsg text-center text-danger"></p>
         </form>
       </div>
-      <div class="col-md-6 d-flex flex-column bg-white rounded shadow pt-2 relative mt-4 ">
+      <div class="col-md-6 d-flex flex-column bg-white rounded shadow pt-2 mt-4 ">
         <span style="position: relative;" class="relative ">
           <div id="countdown">
             <div id="days" class="countdown-item"></div>
@@ -212,7 +214,10 @@
 
   <script>
     $(document).ready(function (e) {
-
+      if (screen.width < 767) {
+        counter1 = document.getElementById('countdown')
+        $('#countbox').html(counter1)
+      }
       $.ajax({
         // type: 'POST',
         url: 'partials/pictures.php',
