@@ -48,7 +48,7 @@ $result = $conn->query($sql);
         }
 
         #activeImg {
-            width: 90%;
+            width: 90vw;
             height: auto;
             border-radius: 10px;
             max-width: 600px;
@@ -103,7 +103,7 @@ $result = $conn->query($sql);
                     console.log(activeImg)
                 })
                 $('#closeBtn').click(()=>{
-                    viewPic.style.scale = "1";
+                    viewPic.style.scale = "0";
                     viewPic.style.borderRadius = "50%";
                 })
             })
