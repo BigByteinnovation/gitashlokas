@@ -40,7 +40,7 @@ $result = $conn->query($sql);
             transition: all 0.5s;
             transform-origin: center;
             overflow: hidden;
-            border-radius: 100px;
+            border-radius: 50%;
             scale: 0;
             z-index: 100;
         }
@@ -95,7 +95,7 @@ $result = $conn->query($sql);
             $(q).click(()=>{
                 activeImg.src = q.src
                 viewPic.style.scale = "1";
-                viewPic.style.borderradius = "1";
+                viewPic.style.borderRadius = "0px";
                 console.log(viewPic)
                 console.log(activeImg)
             })
