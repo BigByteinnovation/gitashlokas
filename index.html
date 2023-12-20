@@ -117,10 +117,8 @@
           </div>
           <div class="mb-1">
             <label for="mobile" class="form-label">Mobile<span class="text-danger">*</span></label>
-            <input type="number" required class="form-control" name="mobile" id="mobile">
+            <input type="text"  oninput="validateNumericInput(this)" pattern="[0-9]*" required class="form-control" name="mobile" id="mobile">
           </div>
-          
-
           <div class="mb-1">
             <label for="numbers" class="form-label">No. of Person Chanting Shlokas <span
                 class="text-danger">*</span><span class="text-danger">(Only
