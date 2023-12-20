@@ -26,6 +26,7 @@ body {
   font-weight: bold;
   display: flex;
   justify-content: center;
+  background-color: purple;
 }
 
 .countdown-item {
@@ -34,7 +35,7 @@ body {
 
 .countdown-label {
   font-size: 14px;
-  color: #555;
+  color: rgb(7, 247, 11);
 }
 
 
@@ -156,19 +157,19 @@ body {
   left: 1%;
   font-size: 1.5rem;
   font-weight: 800;
-  color: green;
+  color: rgb(7, 247, 11);
   gap: 5px;
+   border-radius:20px;
 }
 
 .countdown-item {
-  background-color: rgba(255, 255, 255, 0.815);
   display: flex;
   padding: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0;
-  border-radius: 10px;
+ 
 }
 /* ====================   responsive css  ================== */
 @media screen and (max-width: 767px) {
@@ -187,7 +188,7 @@ body {
 
   #mobilemenu {
     position: absolute;
-    background-color: black;
+    /* background-color: black; */
     width: 250px;
     left: 0;
     top: 20%;
@@ -206,11 +207,13 @@ body {
     left: 1%;
     font-size: 1.2rem;
     font-weight: 800;
-    color: green;
+    color: rgb(7, 247, 11);
     gap: 2px;
+    background-color: purple;
+    
   }
   .countdown-item {
-    background-color: rgba(255, 255, 255, 0.815);
+    /* background-color: rgba(255, 255, 255, 0.815); */
     display: flex;
     padding: 3px;
     justify-content: center;
