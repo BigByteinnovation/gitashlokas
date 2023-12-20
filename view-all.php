@@ -46,14 +46,12 @@ $result = $conn->query($sql);
             scale: 0;
             z-index: 100;
         }
-
         #activeImg {
             width: 90vw;
             height: auto;
             border-radius: 10px;
             max-width: 600px;
         }
-
         #closeBtn {
             position: absolute;
             top: 10%;
@@ -68,7 +66,7 @@ $result = $conn->query($sql);
 
 <body>
     <div id="viewPic" class="absolute d-flex flex-column align-items-center justify-content-center">
-        <img id="activeImg" src="assets\uploads\2023122003Ankit--.jpg" alt="">
+        <img id="activeImg" src="assets\uploads\2023122003Ankit--.jpg" class="border-white" alt="">
         <img id="closeBtn" width="50px" src="assets\close_btn.svg" alt="">
     </div>
 
