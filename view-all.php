@@ -28,10 +28,12 @@ $result = $conn->query($sql);
             transition: transform 0.5s;
             cursor: pointer;
         }
-        .pic:hover{
+
+        .pic:hover {
             transform: scale(1.08);
         }
-        #viewPic{
+
+        #viewPic {
             height: 100%;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.5);
@@ -44,13 +46,15 @@ $result = $conn->query($sql);
             scale: 0;
             z-index: 100;
         }
-        #activeImg{
+
+        #activeImg {
             width: 90%;
             height: auto;
             border-radius: 10px;
             max-width: 600px;
         }
-        #closeBtn{
+
+        #closeBtn {
             position: absolute;
             top: 10%;
             right: 10%;
@@ -59,12 +63,11 @@ $result = $conn->query($sql);
             background-color: white;
             border-radius: 50%;
         }
-
     </style>
 </head>
 
 <body>
-    <div id="viewPic" class="absolute d-flex flex-column align-items-center justify-content-center"> 
+    <div id="viewPic" class="absolute d-flex flex-column align-items-center justify-content-center">
         <img id="activeImg" src="assets\uploads\2023122003Ankit--.jpg" alt="">
         <img id="closeBtn" width="50px" src="assets\close_btn.svg" alt="">
     </div>
@@ -76,7 +79,7 @@ $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     echo '
                     <div class="p-2 col-md-3 ">
-                        <img src="assets/uploads/'.$row['img'].'" alt="" class="pic shadow border border-white rounded-4">
+                        <img src="assets/uploads/' . $row['img'] . '" alt="" class="pic shadow border border-white rounded-4">
                     </div>
                     ';
                 }
@@ -87,19 +90,23 @@ $result = $conn->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
-        $(document).ready(function (e) {
+        $(document).ready(function(e) {
             viewPic = document.getElementById('viewPic')
             activeImg = document.getElementById('activeImg')
 
-            $('.pic').each(function (e, q) {
-            $(q).click(()=>{
-                activeImg.src = q.src
-                viewPic.style.scale = "1";
-                viewPic.style.borderRadius = "0px";
-                console.log(viewPic)
-                console.log(activeImg)
+            $('.pic').each(function(e, q) {
+                $(q).click(() => {
+                    activeImg.src = q.src
+                    viewPic.style.scale = "1";
+                    viewPic.style.borderRadius = "0px";
+                    console.log(viewPic)
+                    console.log(activeImg)
+                })
+                $('#closeBtn').click(()=>{
+                    viewPic.style.scale = "1";
+                    viewPic.style.borderRadius = "50%";
+                })
             })
-          })
         })
     </script>
 </body>
