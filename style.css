@@ -172,6 +172,20 @@ body {
   #countdown{
     position: absolute;
     display: flex;
-    bottom: 2%;
-    left: 2%;
+    bottom: 1%;
+    left: 1%;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: green;
+    gap: 5px;
+  }
+  .countdown-item{
+    background-color: rgba(255, 255, 255, 0.815);
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 10px;
   }
