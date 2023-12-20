@@ -19,49 +19,7 @@ $result = $conn->query($sql);
     <title>GIEO Gita : Ek minute ek saath Gita path</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .pic {
-            width: 100%;
-            object-fit: cover;
-            overflow: hidden;
-            aspect-ratio: 19/9;
-            transition: transform 0.5s;
-            cursor: pointer;
-        }
-
-        .pic:hover {
-            transform: scale(1.08);
-        }
-
-        #viewPic {
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            backdrop-filter: blur(2px);
-            transition: all 0.5s;
-            transform-origin: center;
-            overflow: hidden;
-            border-radius: 50%;
-            scale: 0;
-            z-index: 100;
-        }
-        #activeImg {
-            width: 90vw;
-            height: auto;
-            border-radius: 10px;
-            max-width: 600px;
-        }
-        #closeBtn {
-            position: absolute;
-            top: 10%;
-            right: 10%;
-            cursor: pointer;
-            color: white;
-            background-color: white;
-            border-radius: 50%;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -103,6 +61,7 @@ $result = $conn->query($sql);
                     viewPic.style.scale = "0";
                     viewPic.style.borderRadius = "50%";
                 })
+                $('body').css("overflow","hidden")
             })
         })
     </script>
