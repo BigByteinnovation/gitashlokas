@@ -19,11 +19,13 @@ try {
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // echo var_dump($row);
-        $sum = $row['total'];
-        echo $sum;
-        if($sum == null){
-            echo 0;
-        }
+        // $sum = $row['total'];
+        // echo $sum;
+        echo 500;
+
+        // if($sum == null){
+        //     echo 0;
+        // }
     }else {
         echo 0;
     }
