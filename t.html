@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeric Input Validation</title>
+  <style>
+    /* Optional: Style to indicate invalid input */
+    input:invalid {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="numericInput">Enter Numeric Value:</label>
+  <input type="text" id="numericInput" oninput="validateNumericInput(this)" pattern="[0-9]*" title="Please enter numeric values only">
+
+  <script>
+    function validateNumericInput(inputElement) {
+      // Remove non-numeric characters
+      inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
+
+      // Optionally, you can add more validation logic here based on your requirements
+
+      // For example, if you want to disable specific keys:
+      // if (event.key === 'e' || event.key === '+' || event.key === '-') {
+      //   event.preventDefault();
+      // }
+    }
+  </script>
+
+</body>
+</html>
