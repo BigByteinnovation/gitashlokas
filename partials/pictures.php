@@ -9,8 +9,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // Fetch result
     while ($row = $result->fetch_assoc()) {
-        echo $row['img'];
-        echo var_dump($row);
+        // echo $row['img'];
+        // echo var_dump($row);
         array_push($LatestPics, $row['img']);
     }
 }
