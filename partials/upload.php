@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $country = $_POST['country'];
     $state = $_POST['state'];
     $city = $_POST['city'];
+    $mobile = $_POST['mobile'];
     $numbers = $_POST['numbers'];
 
     $target_dir = "../assets/uploads/";
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($_FILES["uploadimg"]["tmp_name"], $fimgname)) {
                 // echo "img done";
                 // $fimg = $_FILES["featured-img"]["tmp_name"];
-                $sql = "INSERT INTO `chant_data`( `org_name`, `country`, `state`, `city`, `numbers`, `img`, `dt`) VALUES ('$name','$country','$state','$city','$numbers','$newName',NOW())";
+                $sql = "INSERT INTO `chant_data`( `org_name`, `country`, `state`, `city`, `numbers`, `img`, `dt`,`mobile`) VALUES ('$name','$country','$state','$city','$numbers','$newName',NOW(),'$mobile')";
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
                     $status = "Data uploaded Successfully!";
