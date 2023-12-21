@@ -98,13 +98,11 @@ $result = $conn->query($sql);
       </div>
     </div>
   </div>
-
   </div>
     <div id="viewPic" class="absolute d-flex flex-column align-items-center justify-content-center">
         <img id="activeImg" src="assets\uploads\2023122003Ankit--.jpg" class="border-white" alt="">
         <img id="closeBtn" width="50px" src="assets\close_btn.svg" alt="">
     </div>
-
     <div class="container">
         <div class="row ">
             <?php
@@ -143,5 +141,4 @@ $result = $conn->query($sql);
         })
     </script>
 </body>
-
 </html>

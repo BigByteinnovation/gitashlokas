@@ -4,12 +4,15 @@ body {
   font-weight: 500;
   overflow-x: hidden;
 }
-
+.formcs{
+  background-color: linear-gradient(to bottom, #3498db, #2c3e50);
+  font-size: larger;
+  font-weight: 800;
+}
 
 body {
   background: #f7e092 !important;
 }
-
 #totalChants {
   height: 120px !important;
   width: 40% !important;

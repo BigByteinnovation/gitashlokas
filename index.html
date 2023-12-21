@@ -96,8 +96,8 @@
   <!-- /* ========================================FORM START================================== */ -->
   <div class="container ">
     <div class="row">
-      <div class="col-md-6 mt-4">
-        <form id="chantForm" class="bg-white shadow p-4 rounded" method="POST" action="partials/upload.php"
+      <div class="col-md-6 mt-4 ">
+        <form id="chantForm" class="shadow p-4 rounded" style="background: linear-gradient(to bottom, #45ccc3, #f4b1f4); font-size:large; font-weight: 600;" method="POST" action="partials/upload.php"
           enctype="multipart/form-data">
           <div class="mb-1 ">
             <label for="exampleInputEmail1" class="form-label ">Name Or Organisation Name<span
@@ -133,7 +133,7 @@
           <input class="form-control" required type="file" onchange="validateFile()" name="uploadimg" id="uploadimg"
             accept=".jpg, .jpeg, .png" multiple>
 
-          <button type="submit" class=" submitBtn btn btn-danger  my-3 py-2">Submit</button>
+          <button type="submit" class=" submitBtn btn btn-danger my-3 py-2" style=" font-weight: 600;">Submit</button>
           <p id="statusMsg" class="statusMsg text-center text-danger"></p>
         </form>
       </div>
