@@ -133,7 +133,7 @@
           <input class="form-control" required type="file" onchange="validateFile()" name="uploadimg" id="uploadimg"
             accept=".jpg, .jpeg, .png" multiple>
 
-          <button type="submit" class=" submitBtn btn btn-danger my-3 py-2" style=" font-weight: 600;">Submit</button>
+          <button type="submit" class=" submitBtn btn btn-danger my-3 py-2" style=" font-weight:700">Submit</button>
           <p id="statusMsg" class="statusMsg text-center text-danger"></p>
         </form>
       </div>
@@ -150,7 +150,7 @@
         <div
           class="m-2 d-flex flex-column justify-content-center align-items-center border border-danger rounded h-100">
           <p class="fs-md-3 fw-bold">TOTAL NO. OF SHLOKAS CHANT</p>
-          <h1 id="totalChants" class="bg-danger text-white rounded-4 fw-bolder">0</h1>
+          <h1 id="totalChants" class="bg-danger text-white rounded-4 fw-bolder">11001</h1>
         </div>
       </div>
     </div>
@@ -202,8 +202,108 @@
           </div>
         </div>
       </div>
-
     </div>
+<!-- ======================================another slider============================ -->
+
+<div class="row  ">
+  <div class="col-md-4 py-2">
+    <div id="slider1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+            class="slide-img d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+            class="slide-img d-block w-100" alt="Slide 2">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 py-2">
+    <div id="slider2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-2">
+    <div id="slider3" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ================================================anotherslider Ends======================== -->
+
+<div class="row  ">
+  <div class="col-md-4 py-2">
+    <div id="slider1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+            class="slide-img d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+            class="slide-img d-block w-100" alt="Slide 2">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 py-2">
+    <div id="slider2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-2">
+    <div id="slider3" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+            alt="Slide 6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ==================================================3rd slider ends============================== -->
+
+
+
+
   </div>
   <div class="container text-center mb-4"><a href="view-all.php" class="btn btn-danger p-3 px-5">View All</a></div>
   </div>
@@ -235,64 +335,64 @@
       })
 
       // Submit form data via Ajax
-      $("#chantForm").on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: 'partials/upload.php',
-          data: new FormData(this),
-          // dataType: 'json',
-          contentType: false,
-          cache: false,
-          processData: false,
-          beforeSend: function () {
-            $('.submitBtn').attr("disabled", "disabled");
-            $('#chantForm').css("opacity", "0.5");
-            // console.log("we started sending data");
-          },
-          success: function (response) {
-            let p = document.createElement("span");
-            p.addclassList = "msgani";
-            p.innerHTML = response;
-            p.id = "msgspan";
+    //   $("#chantForm").on('submit', function (e) {
+    //     e.preventDefault();
+    //     $.ajax({
+    //       type: 'POST',
+    //       url: 'partials/upload.php',
+    //       data: new FormData(this),
+    //       // dataType: 'json',
+    //       contentType: false,
+    //       cache: false,
+    //       processData: false,
+    //       beforeSend: function () {
+    //         $('.submitBtn').attr("disabled", "disabled");
+    //         $('#chantForm').css("opacity", "0.5");
+    //         // console.log("we started sending data");
+    //       },
+    //       success: function (response) {
+    //         let p = document.createElement("span");
+    //         p.addclassList = "msgani";
+    //         p.innerHTML = response;
+    //         p.id = "msgspan";
 
-            console.log(p);
-            $('#statusMsg').html(p);
-            // if (response.status == 1) {
-            $('#chantForm')[0].reset();
-            //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
-            // } else {
-            //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
-            // }
-            $('#chantForm').css("opacity", "");
-            $(".submitBtn").removeAttr("disabled");
-            $.ajax({
-              type: 'POST',
-              url: 'partials/chant.php',
-              success: function (response) {
-                $('#totalChants').html(response)
-              }
-            })
-          }
-        });
-      });
-      $.ajax({
-        type: 'POST',
-        url: 'partials/chant.php',
-        success: function (response) {
-          $('#totalChants').html(response)
-        }
-      })
-      setInterval(() => {
-        $.ajax({
-          type: 'POST',
-          url: 'partials/chant.php',
-          success: function (response) {
-            $('#totalChants').html(response)
-          }
-        })
-      }, 3000);
-    });
+    //         console.log(p);
+    //         $('#statusMsg').html(p);
+    //         // if (response.status == 1) {
+    //         $('#chantForm')[0].reset();
+    //         //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
+    //         // } else {
+    //         //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
+    //         // }
+    //         $('#chantForm').css("opacity", "");
+    //         $(".submitBtn").removeAttr("disabled");
+    //         $.ajax({
+    //           type: 'POST',
+    //           url: 'partials/chant.php',
+    //           success: function (response) {
+    //             $('#totalChants').html(response)
+    //           }
+    //         })
+    //       }
+    //     });
+    //   });
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: 'partials/chant.php',
+    //     success: function (response) {
+    //       $('#totalChants').html(response)
+    //     }
+    //   })
+    //   setInterval(() => {
+    //     $.ajax({
+    //       type: 'POST',
+    //       url: 'partials/chant.php',
+    //       success: function (response) {
+    //         $('#totalChants').html(response)
+    //       }
+    //     })
+    //   }, 3000);
+    <!-- }); -->
 
   </script>
   <script>
@@ -348,6 +448,42 @@
       return true; // allow form submission
     }
   </script>
+<!-- ======================================counter ===================================== -->
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve the counter value from localStorage
+  let counterValue = localStorage.getItem("counterValue") || 11001;
+
+  // Function to update the counter and display it
+  function updateCounter() {
+    // Increment the counter by 776
+    counterValue = parseInt(counterValue) + 776;
+
+    // If the counter exceeds 776, reset it to 0
+    // if (counterValue >= 776) {
+    //   counterValue = 0;
+    // }
+
+    // Display the updated counter value
+    document.getElementById("counter").textContent = counterValue;
+
+    // Save the counter value to localStorage
+    localStorage.setItem("counterValue", counterValue);
+  }
+
+  // Display the initial counter value
+  document.getElementById("totalChants").textContent = counterValue;
+
+  // Update the counter every second
+  setInterval(updateCounter, 1000);
+});
+
+</script> -->
+<!-- ==============================================Counter ends=================================== -->
+
+
+
+
 
   <!-- Bootstrap JS and Popper.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
