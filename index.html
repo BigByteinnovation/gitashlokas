@@ -9,7 +9,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -97,8 +97,9 @@
   <div class="container ">
     <div class="row">
       <div class="col-md-6 mt-4 ">
-        <form id="chantForm" class="shadow p-4 rounded" style="background: linear-gradient(to bottom, #45ccc3, #f4b1f4); font-size:large; font-weight: 600;" method="POST" action="partials/upload.php"
-          enctype="multipart/form-data">
+        <form id="chantForm" class="shadow p-4 rounded"
+          style="background: linear-gradient(to bottom, #45ccc3, #f4b1f4); font-size:large; font-weight: 600;"
+          method="POST" action="partials/upload.php" enctype="multipart/form-data">
           <div class="mb-1 ">
             <label for="exampleInputEmail1" class="form-label ">Name Or Organisation Name<span
                 class="text-danger">*</span></label>
@@ -156,7 +157,7 @@
     </div>
   </div>
   </div>
-<!-- --------carasouel start-------------------- -->
+  <!-- --------carasouel start-------------------- -->
   <div class="container mt-4 mb-3">
     <div class="row  ">
       <div class="col-md-4 py-2">
@@ -207,109 +208,114 @@
   </div>
   <div class="container text-center mb-4"><a href="view-all.php" class="btn btn-danger p-3 px-5">View All</a></div>
   </div>
-<!-- ======================================another slider============================ -->
+  <!-- ======================================another slider============================ -->
 
-<div class="row  ">
-  <div class="col-md-4 py-2">
-    <div id="slider1" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
-            class="slide-img d-block w-100" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
-            class="slide-img d-block w-100" alt="Slide 2">
+  <div class="row  ">
+    <div class="col-md-4 py-2">
+      <div id="slider1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+              class="slide-img d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+              class="slide-img d-block w-100" alt="Slide 2">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-4 py-2">
-    <div id="slider2" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 3">
-        </div>
-        <div class="carousel-item">
-          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 4">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4 py-2">
-    <div id="slider3" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 5">
-        </div>
-        <div class="carousel-item">
-          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 6">
+    <div class="col-md-4 py-2">
+      <div id="slider2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 3">
+          </div>
+          <div class="carousel-item">
+            <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 4">
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
-
-<!-- ================================================anotherslider Ends======================== -->
-
-<div class="row  ">
-  <div class="col-md-4 py-2">
-    <div id="slider1" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
-            class="slide-img d-block w-100" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-          <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
-            class="slide-img d-block w-100" alt="Slide 2">
+    <div class="col-md-4 py-2">
+      <div id="slider3" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 5">
+          </div>
+          <div class="carousel-item">
+            <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 6">
+          </div>
         </div>
       </div>
     </div>
+
   </div>
-  <div class="col-md-4 py-2">
-    <div id="slider2" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 3">
-        </div>
-        <div class="carousel-item">
-          <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 4">
+
+  <!-- ================================================anotherslider Ends======================== -->
+
+  <div class="row  ">
+    <div class="col-md-4 py-2">
+      <div id="slider1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+              class="slide-img d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img class="rounded-lg" style="object-fit: cover; height: 260px;" src="assets/pic1.jpg"
+              class="slide-img d-block w-100" alt="Slide 2">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-md-4 py-2">
-    <div id="slider3" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 5">
-        </div>
-        <div class="carousel-item">
-          <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
-            alt="Slide 6">
+    <div class="col-md-4 py-2">
+      <div id="slider2" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 3">
+          </div>
+          <div class="carousel-item">
+            <img style="object-fit: cover; height: 450px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 4">
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="col-md-4 py-2">
+      <div id="slider3" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 5">
+          </div>
+          <div class="carousel-item">
+            <img style="object-fit: cover; height: 260px;" src="assets/pic2.jpg" class="slide-img d-block w-100"
+              alt="Slide 6">
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+  <!-- ==================================================3rd slider ends============================== -->
 
-</div>
-<!-- ==================================================3rd slider ends============================== -->
+  <!-- -----------videos start-------------------- -->
+  <div class="container">
+    <div id="videoSection"></div>
+  </div>
+  <!-- -----------videos end-------------------- -->
 
 
 
 
-  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -326,18 +332,20 @@
         url: 'partials/pictures.php',
         success: function (response) {
           var pics = jQuery.parseJSON(response)
-          console.log(response)
+          // console.log(response)
           $('.slide-img').each(function (e, q) {
             if (pics[e]) {
               q.src = "assets/uploads/" + pics[e]
-              console.log(e, q.src)
+              // console.log(e, q.src)
             }
           })
           // console.log(pics)
         }
       })
+      
+      $('#videoSection').load('assets/videos/1a-gallery.php')
 
-      // Submit form data via Ajax
+    // Submit form data via Ajax
     //   $("#chantForm").on('submit', function (e) {
     //     e.preventDefault();
     //     $.ajax({
@@ -395,64 +403,64 @@
     //       }
     //     })
     //   }, 3000);
-    <!-- }); -->
+     }); 
 
   </script>
   <script>
-    function validateNumericInput(inputElement) {
-      // Remove non-numeric characters
-      inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
+      function validateNumericInput(inputElement) {
+        // Remove non-numeric characters
+        inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
 
-      // Optionally, you can add more validation logic here based on your requirements
+        // Optionally, you can add more validation logic here based on your requirements
 
-      // For example, if you want to disable specific keys:
-      // if (event.key === 'e' || event.key === '+' || event.key === '-') {
-      //   event.preventDefault();
-      // }
-    }
-  </script>
-
-  <script>
-    const targetDate = new Date('December 23, 2023 11:00:00').getTime();
-    const countdownInterval = setInterval(updateCountdown, 1000);
-
-    function updateCountdown() {
-      const currentDate = new Date().getTime();
-      const timeDifference = targetDate - currentDate;
-
-      if (timeDifference > 0) {
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        document.getElementById('days').innerHTML = `<div>${days}</div><div class="countdown-label">Days</div>`;
-        document.getElementById('hours').innerHTML = `<div>${hours}</div><div class="countdown-label">Hours</div>`;
-        document.getElementById('minutes').innerHTML = `<div>${minutes}</div><div class="countdown-label">Minutes</div>`;
-        document.getElementById('seconds').innerHTML = `<div>${seconds}</div><div class="countdown-label">Seconds</div>`;
-      } else {
-        document.getElementById('countdown').innerHTML = 'Countdown expired!';
-        clearInterval(countdownInterval);
+        // For example, if you want to disable specific keys:
+        // if (event.key === 'e' || event.key === '+' || event.key === '-') {
+        //   event.preventDefault();
+        // }
       }
-    }
+  </script>
+
+  <script>
+      const targetDate = new Date('December 23, 2023 11:00:00').getTime();
+      const countdownInterval = setInterval(updateCountdown, 1000);
+
+      function updateCountdown() {
+        const currentDate = new Date().getTime();
+        const timeDifference = targetDate - currentDate;
+
+        if (timeDifference > 0) {
+          const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+          document.getElementById('days').innerHTML = `<div>${days}</div><div class="countdown-label">Days</div>`;
+          document.getElementById('hours').innerHTML = `<div>${hours}</div><div class="countdown-label">Hours</div>`;
+          document.getElementById('minutes').innerHTML = `<div>${minutes}</div><div class="countdown-label">Minutes</div>`;
+          document.getElementById('seconds').innerHTML = `<div>${seconds}</div><div class="countdown-label">Seconds</div>`;
+        } else {
+          document.getElementById('countdown').innerHTML = 'Countdown expired!';
+          clearInterval(countdownInterval);
+        }
+      }
   </script>
   <script>
-    function validateFile() {
-      var fileInput = document.getElementById('uploadimg');
-      var fileSize = fileInput.files[0].size; // in bytes
+      function validateFile() {
+        var fileInput = document.getElementById('uploadimg');
+        var fileSize = fileInput.files[0].size; // in bytes
 
-      // Check if the file size is less than or equal to 2 MB (2 * 1024 * 1024 bytes)
-      if (fileSize > 3 * 1024 * 1024) {
-        alert('File size exceeds the limit of 3 MB. Please choose a smaller file.');
-        fileInput.value = ""
-        return false; // prevent form submission
+        // Check if the file size is less than or equal to 2 MB (2 * 1024 * 1024 bytes)
+        if (fileSize > 3 * 1024 * 1024) {
+          alert('File size exceeds the limit of 3 MB. Please choose a smaller file.');
+          fileInput.value = ""
+          return false; // prevent form submission
+        }
+
+        return true; // allow form submission
       }
-
-      return true; // allow form submission
-    }
   </script>
-<!-- ======================================counter ===================================== -->
-<!-- <script>
+  <!-- ======================================counter ===================================== -->
+  <!-- <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve the counter value from localStorage
   let counterValue = localStorage.getItem("counterValue") || 11001;
@@ -482,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script> -->
-<!-- ==============================================Counter ends=================================== -->
+  <!-- ==============================================Counter ends=================================== -->
 
 
 
@@ -491,6 +499,11 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- Bootstrap JS and Popper.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets\videos\1c-gallery.js"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>
