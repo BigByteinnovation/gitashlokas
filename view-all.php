@@ -133,8 +133,8 @@ $result = $conn->query($sql);
                     activeImg.src = q.src
                     viewPic.style.scale = "1";
                     viewPic.style.borderRadius = "0px";
-                    console.log(viewPic)
-                    console.log(activeImg)
+                    // console.log(viewPic)
+                    // console.log(activeImg)
                 })
                 $('#closeBtn').click(()=>{
                     viewPic.style.scale = "0";

@@ -21,7 +21,7 @@
       // (B2) OUTPUT VIDEOS
       if (count($vid) > 0) { foreach ($vid as $v) {
         
-        printf("<video class='shadow' controls src='assets/videos/gallery/%s'></video>", rawurlencode(basename($v)));
+        printf("<video class='shadow rounded-4' controls src='assets/videos/gallery/%s'></video>", rawurlencode(basename($v)));
       }}
     ?></div>
   </body>
