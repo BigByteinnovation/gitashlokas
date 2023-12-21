@@ -6,7 +6,7 @@
     <!-- <script src="1c-gallery.js"></script> -->
  </head>
   <body>
-    <h2 class="text-center mt" >Videos</h2>
+    <h1 class="text-center mt-5" > <b>Videos </b> </h1>
     <!-- (A) CLOSE FULLSCREEN VIDEO -->
     <div id="vClose" onclick="vplay.toggle(false)">X</div>
 
@@ -20,7 +20,8 @@
 
       // (B2) OUTPUT VIDEOS
       if (count($vid) > 0) { foreach ($vid as $v) {
-        printf("<video src='assets/videos/gallery/%s'></video>", rawurlencode(basename($v)));
+        
+        printf("<video class='shadow' controls src='assets/videos/gallery/%s'></video>", rawurlencode(basename($v)));
       }}
     ?></div>
   </body>
