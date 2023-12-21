@@ -6,7 +6,7 @@
     <!-- <script src="1c-gallery.js"></script> -->
  </head>
   <body>
-    <h2 class="text-center mt-3" >Videos</h2>
+    <h2 class="text-center mt" >Videos</h2>
     <!-- (A) CLOSE FULLSCREEN VIDEO -->
     <div id="vClose" onclick="vplay.toggle(false)">X</div>
 
