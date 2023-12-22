@@ -9,12 +9,15 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body class="">
+  <!-- (A) CLOSE FULLSCREEN VIDEO -->
+  <div id="vClose" onclick="vplay.toggle(false)">X</div>
+
   <div class="m-0 p-0 bg-white" id="header"></div>
   <div class="container-fluid a-head">
     <div class="container ">
@@ -97,8 +100,9 @@
   <div class="container ">
     <div class="row">
       <div class="col-md-6 mt-4 ">
-        <form id="chantForm" class="shadow p-4 rounded" style="background: linear-gradient(to bottom, #45ccc3, #f4b1f4); font-size:large; font-weight: 600;" method="POST" action="partials/upload.php"
-          enctype="multipart/form-data">
+        <form id="chantForm" class="shadow p-4 rounded"
+          style="background: linear-gradient(to bottom, #45ccc3, #f4b1f4); font-size:large; font-weight: 600;"
+          method="POST" action="partials/upload.php" enctype="multipart/form-data">
           <div class="mb-1 ">
             <label for="exampleInputEmail1" class="form-label ">Name Or Organisation Name<span
                 class="text-danger">*</span></label>
@@ -156,7 +160,7 @@
     </div>
   </div>
   </div>
-<!-- --------carasouel start-------------------- -->
+  <!-- --------carasouel start-------------------- -->
   <div class="container mt-4 mb-3">
     <div class="row  ">
       <div class="col-md-4 py-2">
@@ -207,8 +211,18 @@
   </div>
   <div class="container text-center mb-4"><a href="view-all.php" class="btn btn-danger p-3 px-5">View All</a></div>
   </div>
-<!-- ======================================another slider============================ -->
-  
+  <!-- ======================================another slider============================ -->
+
+
+  <!-- -----------videos start-------------------- -->
+  <div class="container">
+    <div id="videoSection"></div>
+  </div>
+  <!-- -----------videos end-------------------- -->
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -225,76 +239,78 @@
         url: 'partials/pictures.php',
         success: function (response) {
           var pics = jQuery.parseJSON(response)
-          console.log(response)
+          // console.log(response)
           $('.slide-img').each(function (e, q) {
             if (pics[e]) {
               q.src = "assets/uploads/" + pics[e]
-              console.log(e, q.src)
+              // console.log(e, q.src)
             }
           })
           // console.log(pics)
         }
       })
 
-      // Submit form data via Ajax
-      $("#chantForm").on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: 'partials/upload.php',
-          data: new FormData(this),
-          // dataType: 'json',
-          contentType: false,
-          cache: false,
-          processData: false,
-          beforeSend: function () {
-            $('.submitBtn').attr("disabled", "disabled");
-            $('#chantForm').css("opacity", "0.5");
-            // console.log("we started sending data");
-          },
-          success: function (response) {
-            let p = document.createElement("span");
-            p.addclassList = "msgani";
-            p.innerHTML = response;
-            p.id = "msgspan";
+      $('#videoSection').load('assets/videos/1a-gallery.php')
 
-            console.log(p);
-            $('#statusMsg').html(p);
-            if (response.status == 1) {
-            $('#chantForm')[0].reset();
-              $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
-            } else {
-              $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
-            }
-    //         $('#chantForm').css("opacity", "");
-    //         $(".submitBtn").removeAttr("disabled");
-    //         $.ajax({
-    //           type: 'POST',
-    //           url: 'partials/chant.php',
-    //           success: function (response) {
-    //             $('#totalChants').html(response)
-    //           }
-    //         })
-          }
-        });
-      });
-    //   $.ajax({
-    //     type: 'POST',
-    //     url: 'partials/chant.php',
-    //     success: function (response) {
-    //       $('#totalChants').html(response)
-    //     }
-    //   })
-    //   setInterval(() => {
-    //     $.ajax({
-    //       type: 'POST',
-    //       url: 'partials/chant.php',
-    //       success: function (response) {
-    //         $('#totalChants').html(response)
-    //       }
-    //     })
-    //   }, 3000);
-   }); 
+      // Submit form data via Ajax
+      //   $("#chantForm").on('submit', function (e) {
+      //     e.preventDefault();
+      //     $.ajax({
+      //       type: 'POST',
+      //       url: 'partials/upload.php',
+      //       data: new FormData(this),
+      //       // dataType: 'json',
+      //       contentType: false,
+      //       cache: false,
+      //       processData: false,
+      //       beforeSend: function () {
+      //         $('.submitBtn').attr("disabled", "disabled");
+      //         $('#chantForm').css("opacity", "0.5");
+      //         // console.log("we started sending data");
+      //       },
+      //       success: function (response) {
+      //         let p = document.createElement("span");
+      //         p.addclassList = "msgani";
+      //         p.innerHTML = response;
+      //         p.id = "msgspan";
+
+      //         console.log(p);
+      //         $('#statusMsg').html(p);
+      //         // if (response.status == 1) {
+      //         $('#chantForm')[0].reset();
+      //         //   $('.statusMsg').html('<p class="alert alert-success">' + response.message + '</p>');
+      //         // } else {
+      //         //   $('.statusMsg').html('<p class="alert alert-danger">' + response.message + '</p>');
+      //         // }
+      //         $('#chantForm').css("opacity", "");
+      //         $(".submitBtn").removeAttr("disabled");
+      //         $.ajax({
+      //           type: 'POST',
+      //           url: 'partials/chant.php',
+      //           success: function (response) {
+      //             $('#totalChants').html(response)
+      //           }
+      //         })
+      //       }
+      //     });
+      //   });
+      //   $.ajax({
+      //     type: 'POST',
+      //     url: 'partials/chant.php',
+      //     success: function (response) {
+      //       $('#totalChants').html(response)
+      //     }
+      //   })
+      //   setInterval(() => {
+      //     $.ajax({
+      //       type: 'POST',
+      //       url: 'partials/chant.php',
+      //       success: function (response) {
+      //         $('#totalChants').html(response)
+      //       }
+      //     })
+      //   }, 3000);
+    });
 
   </script>
   <script>
@@ -350,42 +366,74 @@
       return true; // allow form submission
     }
   </script>
-// <!-- ======================================counter ===================================== -->
-// <!-- <script>
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Retrieve the counter value from localStorage
-//   let counterValue = localStorage.getItem("counterValue") || 11001;
+  <!-- ======================================counter ===================================== -->
+  <!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve the counter value from localStorage
+  let counterValue = localStorage.getItem("counterValue") || 11001;
 
-//   // Function to update the counter and display it
-//   function updateCounter() {
-//     // Increment the counter by 776
-//     counterValue = parseInt(counterValue) + 776;
+  // Function to update the counter and display it
+  function updateCounter() {
+    // Increment the counter by 776
+    counterValue = parseInt(counterValue) + 776;
 
-//     // If the counter exceeds 776, reset it to 0
-//     // if (counterValue >= 776) {
-//     //   counterValue = 0;
-//     // }
+    // If the counter exceeds 776, reset it to 0
+    // if (counterValue >= 776) {
+    //   counterValue = 0;
+    // }
 
-//     // Display the updated counter value
-//     document.getElementById("counter").textContent = counterValue;
+    // Display the updated counter value
+    document.getElementById("counter").textContent = counterValue;
 
-//     // Save the counter value to localStorage
-//     localStorage.setItem("counterValue", counterValue);
-//   }
+    // Save the counter value to localStorage
+    localStorage.setItem("counterValue", counterValue);
+  }
 
-//   // Display the initial counter value
-//   document.getElementById("totalChants").textContent = counterValue;
+  // Display the initial counter value
+  document.getElementById("totalChants").textContent = counterValue;
 
-//   // Update the counter every second
-//   setInterval(updateCounter, 1000);
-// });
+  // Update the counter every second
+  setInterval(updateCounter, 1000);
+});
 
-// </script> -->
-<!-- ==============================================Counter ends=================================== -->
+</script> -->
+  <!-- ==============================================Counter ends=================================== -->
+
+
+
+
 
   <!-- Bootstrap JS and Popper.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/videos/1c-gallery.js"></script>
+  <script>
+    var vplay = {
+      // (A) INIT - CLICK VIDEO TO GO FULL SCREEN
+      init: () => {
+        for (let v of document.querySelectorAll(".gallery video")) {
+          v.onclick = () => {
+            if (!v.classList.contains("full")) { vplay.toggle(v); }
+          };
+        }
+      },
+
+      // (B) TOGGLE FULLSCREEN
+      toggle: e => {
+        // (B1) TOGGLE CLOSE BUTTON
+        document.getElementById("vClose").classList.toggle("show");
+
+        // (B2) TOGGLE VIDEO
+        let v = e === false ? document.querySelector(".gallery .full") : e;
+        v.classList.toggle("full");
+        v.controls = e === false ? false : true;
+        if (e === false) { v.pause(); }
+      }
+    };
+    vplay.init
+    console.log("ghv")
+  </script>
 </body>
 
 </html>
