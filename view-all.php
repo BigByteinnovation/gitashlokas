@@ -140,7 +140,7 @@ $result = $conn->query($sql);
                     viewPic.style.scale = "0";
                     viewPic.style.borderRadius = "50%";
                 })
-                $('body').css("overflow","hidden")
+                // $('body').css("overflow","hidden")
             })
         })
     </script>

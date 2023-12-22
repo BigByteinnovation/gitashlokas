@@ -154,7 +154,7 @@
         <div
           class="m-2 d-flex flex-column justify-content-center align-items-center border border-danger rounded h-100">
           <p class="fs-md-3 fw-bold">TOTAL NO. OF SHLOKAS CHANT</p>
-          <h1 id="totalChants" class="bg-danger text-white rounded-4 fw-bolder">11001</h1>
+          <h1 id="totalChants" class="bg-danger text-white rounded-4 fw-bolder">12500000</h1>
         </div>
       </div>
     </div>
@@ -284,23 +284,11 @@
               // }
               $('#chantForm').css("opacity", "");
               $(".submitBtn").removeAttr("disabled");
-              $.ajax({
-                type: 'POST',
-                url: 'partials/chant.php',
-                success: function (response) {
-                  $('#totalChants').html(response)
-                }
-              })
+              
             }
           });
         });
-        $.ajax({
-          type: 'POST',
-          url: 'partials/chant.php',
-          success: function (response) {
-            $('#totalChants').html(response)
-          }
-        })
+        
         setInterval(() => {
           $.ajax({
             type: 'POST',
@@ -309,7 +297,7 @@
               $('#totalChants').html(response)
             }
           })
-        }, 3000);
+        }, 10);
     });
 
   </script>
