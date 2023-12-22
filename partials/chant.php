@@ -21,7 +21,7 @@ try {
         // echo var_dump($row);
         // $sum = $row['total'];
         // echo $sum;
-        echo 500;
+        echo 11000;
 
         // if($sum == null){
         //     echo 0;
