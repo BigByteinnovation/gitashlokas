@@ -299,7 +299,12 @@ body {
   grid-gap: 10px;
   max-width: 1200px;
   margin: 0 auto; /* horizontal center */
+  position: relative;
 }
+.gallery video {
+  
+}
+  
 
 /* (A2) SMALL SCREENS - 2 IMAGES PER ROW */
 @media screen and (max-width: 768px) {
@@ -313,6 +318,7 @@ body {
   height: 200px;
   object-fit: cover; /* fill | contain | cover | scale-down */
   cursor: pointer;
+
 }
 
 /* (B2) FULLSCREEN VIDEO */
@@ -336,8 +342,3 @@ body {
 }
 #vClose.show { display: block; }
 
-/* (X) WHOLE PAGE */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-}
