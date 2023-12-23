@@ -116,7 +116,11 @@ $result = $conn->query($sql);
                     ';
                 }
             }
+            else{
+              echo '<h2 style="height: 300px;" class=" rounded-5 shadow mt-5 bg-warning-subtle d-flex align-items-center justify-content-center text-center text-black-50">No Result Found</h2>';
+            }
             ?>
+            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -130,14 +134,14 @@ $result = $conn->query($sql);
                     activeImg.src = q.src
                     viewPic.style.scale = "1";
                     viewPic.style.borderRadius = "0px";
-                    console.log(viewPic)
-                    console.log(activeImg)
+                    // console.log(viewPic)
+                    // console.log(activeImg)
                 })
                 $('#closeBtn').click(()=>{
                     viewPic.style.scale = "0";
                     viewPic.style.borderRadius = "50%";
                 })
-                $('body').css("overflow","hidden")
+                // $('body').css("overflow","hidden")
             })
         })
     </script>
